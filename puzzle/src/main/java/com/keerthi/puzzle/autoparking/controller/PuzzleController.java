@@ -28,13 +28,12 @@ public class PuzzleController {
 	public ModelAndView getPuzzleController( ModelMap model) {
 		 return new ModelAndView("puzzle");
 	}
-	
 	/**
 	 * used GET request method with default values(For grid and coordinates) 
 	 * if user sends with null values.
 	 */
 	@GetMapping(value = "/puzzleResult")
-    	public ModelAndView parkingController(@RequestParam(name="grid", defaultValue="15 15") String grid, 
+    public ModelAndView parkingController(@RequestParam(name="grid", defaultValue="15 15") String grid, 
     	@RequestParam(name="coordinate", defaultValue="1 1") String coord,@RequestParam("direction") String direction,
     	@RequestParam("commands") String command, ModelMap model){
 		

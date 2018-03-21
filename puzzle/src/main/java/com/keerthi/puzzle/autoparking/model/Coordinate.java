@@ -6,6 +6,10 @@ import java.util.stream.Stream;
 
 import com.keerthi.puzzle.autoparking.service.ICoordinate;
 
+/**
+ * @author keerthi
+ * 
+ */
 public class Coordinate implements ICoordinate {
 
 	private	int x;
@@ -18,6 +22,7 @@ public class Coordinate implements ICoordinate {
 		this.direction = direction;
 	}
 	
+	//converting string to object
 	public Coordinate(String cor, String dir) {
 		Direction d = StringToDirectionMapping().get(dir) ;
 		int [] temp = toArray(cor);
@@ -60,17 +65,10 @@ public class Coordinate implements ICoordinate {
 		int[] array = Stream.of(s.split(" |,"))
                 .mapToInt(token -> Integer.parseInt(token))
                 .toArray();
-		/*String[] tokens = s.split(" |,");
-		int[] array = new int[tokens.length];
-
-		int i = 0;
-		for (String token : tokens){
-		    array[i++] = Integer.parseInt(token); 
-		}*/
-                
 		return array;		
 	}
 	
+	//Created map to get the related mapping of direction 
 	private static Map<String, Direction> StringToDirectionMapping() {
         final Map<String, Direction> map = new HashMap<String, Direction>();
         map.put("North", Direction.North);

@@ -21,7 +21,6 @@ public class Car implements ICommand{
 		}
 	}
 	
-	
 	public ICoordinate getCoordinate()
 	{
 		if(this.coordinate.getX()<1 || this.coordinate.getY()<1 || 
@@ -32,6 +31,7 @@ public class Car implements ICommand{
 		return this.coordinate;
 	}
 	
+	//Get indivual string and perform operation using method overloading concept 
 	public void move(String strCommand)
 	{
 		for (int index = 0; index < strCommand.length(); index++) {
@@ -43,7 +43,8 @@ public class Car implements ICommand{
 		}
 	}
 
-
+	//Logic - Right or Left just change the direction.
+	//		  Forward - move based on direction. 
 	public void move(Commands command)
 	{
 		if(command == null) {
@@ -76,7 +77,7 @@ public class Car implements ICommand{
 			}
 		}
 	}
-	
+	//Mapping string to Command type
 	private static Map<String, Commands> StringToCommandMapping() {
         final Map<String, Commands> map = new HashMap<String, Commands>();
         map.put("R", Commands.Right);

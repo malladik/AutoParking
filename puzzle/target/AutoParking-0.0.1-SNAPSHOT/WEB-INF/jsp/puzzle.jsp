@@ -6,7 +6,7 @@
 	<div class="welcome_title"><h1>Automotive Parking</h1></div>
 	<div class="form-group">
 			<frm:form modelAttribute="car" method="GET" acceptCharset="UTF-8"	action="puzzleResult">
-				<input type="text" class="form-control" style ="margin-bottom: 20px;" id="grid" name="grid" placeholder="grid default size: 15 15">
+				<input type="text" class="form-control" style ="margin-bottom: 20px;" id="grid" name="grid" placeholder="Default gridsize: 15 15">
 				<input type="text" class="form-control" style ="margin-bottom: 20px;"id="coordinate" name="coordinate" placeholder="Default coordinates: 1 1">
 				<input type="text" class="form-control" style ="margin-bottom: 20px;"id="commands" name="commands" placeholder="Commands">
 				<div data-toggle="buttons">

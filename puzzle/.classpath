@@ -39,6 +39,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<!--classpathentry kind="lib" path="C:/KeerSWBackup/apache-tomcat-8.5.23/lib/servlet-api.jar"/ -->
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

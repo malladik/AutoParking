@@ -18,7 +18,10 @@ import com.keerthi.puzzle.autoparking.service.IGrid;
 public class CarParkingSystemGridTest {
 	
 	IGrid grid = new CarParkingSystmeGrid(15,15);
-
+	
+	/********************************
+	 * 		Edge case Test *
+	 ********************************/
 	
 	@Test(expected = IllegalArgumentException.class)
 	public void whenInitialCoordinatesLessThanMin() {
@@ -45,8 +48,7 @@ public class CarParkingSystemGridTest {
 	}
 	
 	/**
-	 * Edge Testing - when resulting coordinates go over the
-	 * set Grid size
+	 * Edge Testing - when resulting coordinates end out of the Grid
 	 *
 	 */
 	@Test(expected = IllegalArgumentException.class)

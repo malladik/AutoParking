@@ -3,7 +3,10 @@ package com.keerthi.puzzle.autoparking.model;
 import java.util.stream.Stream;
 
 import com.keerthi.puzzle.autoparking.service.IGrid;
-
+/**
+ * @author keerthi
+ * Model for Grid
+ */
 public class CarParkingSystmeGrid implements IGrid {
 
 	private int width;
@@ -40,14 +43,6 @@ public class CarParkingSystmeGrid implements IGrid {
 		int[] array = Stream.of(s.split(" |,"))
                 .mapToInt(token -> Integer.parseInt(token))
                 .toArray();
-		/*String[] tokens = s.split(" |,");
-		int[] array = new int[tokens.length];
-
-		int i = 0;
-		for (String token : tokens){
-		    array[i++] = Integer.parseInt(token); 
-		}*/
-                
 		return array;		
 	}
 
