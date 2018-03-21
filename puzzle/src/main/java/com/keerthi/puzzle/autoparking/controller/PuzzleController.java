@@ -29,8 +29,12 @@ public class PuzzleController {
 		 return new ModelAndView("puzzle");
 	}
 	
+	/**
+	 * used GET request method with default values(For grid and coordinates) 
+	 * if user sends with null values.
+	 */
 	@GetMapping(value = "/puzzleResult")
-    public ModelAndView parkingController(@RequestParam(name="grid", defaultValue="15 15") String grid, 
+    	public ModelAndView parkingController(@RequestParam(name="grid", defaultValue="15 15") String grid, 
     	@RequestParam(name="coordinate", defaultValue="1 1") String coord,@RequestParam("direction") String direction,
     	@RequestParam("commands") String command, ModelMap model){
 		
@@ -39,8 +43,12 @@ public class PuzzleController {
         IGrid igrid = new CarParkingSystmeGrid(grid);
         ICoordinate coordinate = new Coordinate(coord,direction);
         Car car = new Car(coordinate,igrid);
-        car.move(command);
-        
+        // Checking not to get to exception to UI
+        if (command.toUpperCase().matches("^[RLF]+$")) {
+        	car.move(command);
+        }else{
+        	command = "Wrong Command String";
+        }
         model.addAttribute("Grid", grid);
         model.addAttribute("Direction", direction);
         model.addAttribute("Coordinates", coord);
